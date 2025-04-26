@@ -7,9 +7,13 @@ const PORT = process.env.PORT || 3000;
 app.use('/', express.static(path.join(__dirname, '../frontend')));
 
 app.get('/api/next', async (req, res) => {
-  const [n1, n2] = await getNextEvents();
-  res.json({ next1: n1.summary, next2: n2.summary });
-});
+    // getNextEvents() resolves to [ { summary, start }, { summary, start } ]
+    const [event1, event2] = await getNextEvents();
+    res.json({
+      next1: { summary: event1.summary, start: event1.start },
+      next2: { summary: event2.summary, start: event2.start }
+    });
+  });
 
 app.get('/api/calendar', (req, res) => {
   const { cal, view } = req.query;

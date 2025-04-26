@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Family Calendar Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,26 +12,20 @@
       <button id="homeBtn">Daily</button>
       <button id="weeklyBtn">Weekly</button>
       <button id="refreshBtn">Refresh</button>
-      <div id="calendarBtns" class="cal-switch">
-        <!-- Buttons will be injected here by JS -->
-      </div>
+      <div id="calendarBtns" class="cal-switch"></div>
     </div>
-
     <div id="nextEvents" class="next-events-container">
-        <div class="next-event-card" id="nextEvent1"></div>
-        <div class="next-event-card" id="nextEvent2"></div>
-      </div>
-      
-
+      <div class="next-event-card" id="nextEvent1">Loading...</div>
+      <div class="next-event-card" id="nextEvent2">Loading...</div>
+    </div>
   </header>
 
-  <!-- NEW: Current calendar label -->
-  <div id="currentCalLabel" style="padding:10px; background:#fff; text-align:center; font-size:1.4em; font-weight:bold;">
-    Loading…
-  </div>
+  <div id="currentCalLabel">Loading Calendar...</div>
 
   <main>
-    <div id="calendarContainer"></div>
+    <div id="calendarContainer">
+      <!-- Calendar iframe will be injected here -->
+    </div>
   </main>
 
   <script src="app.js"></script>
