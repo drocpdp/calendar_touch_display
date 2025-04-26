@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Calendar Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div id="nav">
+      <button id="homeBtn">Daily</button>
+      <button id="weeklyBtn">Weekly</button>
+      <button id="refreshBtn">Refresh</button>
+      <div id="calendarBtns" class="cal-switch">
+        <!-- Buttons will be injected here by JS -->
+      </div>
+    </div>
+
+    <div id="nextEvents" class="next-events-container">
+        <div class="next-event-card" id="nextEvent1"></div>
+        <div class="next-event-card" id="nextEvent2"></div>
+      </div>
+      
+
+  </header>
+
+  <!-- NEW: Current calendar label -->
+  <div id="currentCalLabel" style="padding:10px; background:#fff; text-align:center; font-size:1.4em; font-weight:bold;">
+    Loading…
+  </div>
+
+  <main>
+    <div id="calendarContainer"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
