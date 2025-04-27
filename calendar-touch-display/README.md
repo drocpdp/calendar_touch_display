@@ -29,8 +29,6 @@ Runs on Node.js + Docker. Works great on TVs, tablets, and kiosks!
 2. **Install dependencies:**
 
     ```bash
-    Copy
-    Edit
     cd backend
     npm install
 
