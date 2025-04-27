@@ -1,55 +1,55 @@
-/* style.css - Calendar Touch Display Styles */
-
-/* Reset and Base Styles */
-
-/* Configuration Variables */
+/* === Global Variables === */
 :root {
-    --calendar-view-width: 80%;
-    --calendar-view-height: 70vh;
+    --calendar-view-width: 100%;
+    --calendar-view-height: 100%;
   }
   
-* {
+  /* === Base Styles === */
+  * {
     box-sizing: border-box;
   }
   
   body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background: #f5f5f5;
     color: #333;
   }
   
-  /* Header and Navigation */
+  /* === Header === */
   header {
-    background: #ffffff;
+    background: #f0f8ff; /* pale blue */
     padding: 10px;
+    border-bottom: 2px solid #ddd;
   }
   
+  /* === Navigation Buttons === */
   #nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
   }
   
-  #nav button {
+  #nav button, .cal-btn {
+    font-size: 1.1em;        /* smaller font */
+    padding: 10px 18px;      /* smaller padding */
+    margin: 5px;
     border: none;
     border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 1.2em;
     background: #ddd;
     color: #333;
     cursor: pointer;
   }
   
-  #nav button.active {
+  
+  #nav button.active, .cal-btn.active {
     background: #007acc;
     color: #fff;
   }
   
-  /* Calendar Switch Buttons */
+  /* === Calendar Switch Buttons === */
   .cal-switch {
     display: flex;
     justify-content: center;
@@ -58,41 +58,27 @@
     margin-top: 10px;
   }
   
-  .cal-btn {
-    flex: 1;
-    padding: 12px 0;
-    font-size: 1.2em;
-    background: #ddd;
-    border: none;
-    border-radius: 8px;
-    color: #333;
-    cursor: pointer;
-  }
-  
-  .cal-btn.active {
-    background: #007acc;
-    color: #fff;
-  }
-  
-  /* Next Event Cards */
+  /* === Next Events Section === */
   .next-events-container {
     display: flex;
     justify-content: space-around;
-    padding: 0 10px;
-    margin: 10px 0;
+    background: #fff8dc; /* warm yellow background */
+    border-radius: 12px;
+    margin: 10px 20px;
+    padding: 10px;
   }
   
   .next-event-card {
     background: #fff;
-    border: 2px solid #f1c40f;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 3px solid #ffcc00;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     flex: 1;
-    margin: 0 8px;
-    padding: 16px;
+    margin: 0 12px;
+    padding: 20px;
+    font-size: 1.3em;
     display: flex;
     flex-direction: column;
-    min-height: 80px;
   }
   
   .next-event-card .next-title {
@@ -103,27 +89,28 @@
   }
   
   .next-event-card .next-details {
-    font-size: 0.9em;
+    font-size: 1em;
     color: #333;
     flex: 1;
   }
   
-  
-  /* Current Calendar Label */
+  /* === Current Calendar Label === */
   #currentCalLabel {
     padding: 10px;
+    margin-top: 5px;
     background: #ffffff;
     text-align: center;
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: bold;
   }
   
-/* Main and Calendar Container */
-main {
+  /* === Main Calendar Container === */
+  main {
+    height: calc(100vh - 260px);
     display: flex;
-    justify-content: center;  /* center the calendar container */
+    justify-content: center;
     align-items: center;
-    height: calc(100vh - 240px);  /* adjust based on header + label height */
+    background: #ffffff;
   }
   
   #calendarContainer {
@@ -141,4 +128,29 @@ main {
     border: none;
   }
   
+  #scrollControls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  #scrollControls button {
+    font-size: 1.2em;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #007acc;
+    color: #fff;
+    cursor: pointer;
+    min-width: 120px;
+  }
+  
+  #scrollControls button:hover {
+    background: #005fa3;
+  }
+  
+  #scrollControls button.hidden {
+    display: none;
+  }
   
