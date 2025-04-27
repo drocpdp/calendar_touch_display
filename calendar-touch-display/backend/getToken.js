@@ -1,6 +1,6 @@
-const fs     = require('fs');
+const fs = require('fs');
 const readline = require('readline');
-const path   = require('path');
+const path = require('path');
 const { google } = require('googleapis');
 
 const CRED_PATH = path.join(__dirname, 'credentials/credentials.json');
